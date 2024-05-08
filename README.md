@@ -7,24 +7,46 @@ Crea un diagrama similar que describa la situación en la que el usuario crea un
 
 ```
 sequenceDiagram
-Alice->>John: Hello John, how are you?
-loop HealthCheck
-    John->>John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John-->>Alice: Great!
-John->>Bob: How about you?
-Bob-->>John: Jolly good!
+    participant User
+    participant WebBrowser
+    participant Server
+    User->>WebBrowser: Ingresa a https://studies.cs.helsinki.fi/exampleapp/notes
+    activate WebBrowser
+    WebBrowser->>Server: Solicita la página de notas
+    activate Server
+    Server-->>WebBrowser: Retorna la página de notas
+    deactivate Server
+    WebBrowser->>User: Muestra la página de notas
+    User->>WebBrowser: Escribe algo en el campo de texto
+    User->>WebBrowser: Hace clic en el botón Save
+    WebBrowser->>Server: Envía la solicitud para guardar la nota
+    activate Server
+    Server-->>WebBrowser: Retorna confirmación de guardado
+    deactivate Server
+    WebBrowser->>User: Muestra confirmación de guardado
+    deactivate WebBrowser
+
 ```
 
 ```mermaid
 sequenceDiagram
-Alice->>John: Hello John, how are you?
-loop HealthCheck
-    John->>John: Fight against hypochondria
-end
-Note right of John: Rational thoughts!
-John-->>Alice: Great!
-John->>Bob: How about you?
-Bob-->>John: Jolly good!
+    participant User
+    participant WebBrowser
+    participant Server
+    User->>WebBrowser: Ingresa a https://studies.cs.helsinki.fi/exampleapp/notes
+    activate WebBrowser
+    WebBrowser->>Server: Solicita la página de notas
+    activate Server
+    Server-->>WebBrowser: Retorna la página de notas
+    deactivate Server
+    WebBrowser->>User: Muestra la página de notas
+    User->>WebBrowser: Escribe algo en el campo de texto
+    User->>WebBrowser: Hace clic en el botón Save
+    WebBrowser->>Server: Envía la solicitud para guardar la nota
+    activate Server
+    Server-->>WebBrowser: Retorna confirmación de guardado
+    deactivate Server
+    WebBrowser->>User: Muestra confirmación de guardado
+    deactivate WebBrowser
+
 ```
