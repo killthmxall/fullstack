@@ -50,3 +50,38 @@ sequenceDiagram
     deactivate WebBrowser
 
 ```
+
+### 0.5: Diagrama de aplicación de una sola página
+
+Crea un diagrama que describa la situación en la que el usuario accede a la versión de aplicación de una sola página de la aplicación de notas en https://studies.cs.helsinki.fi/exampleapp/spa.
+
+```
+sequenceDiagram
+    participant User
+    participant WebBrowser
+    participant Server
+    User->>WebBrowser: Ingresa a https://studies.cs.helsinki.fi/exampleapp/spa
+    activate WebBrowser
+    WebBrowser->>Server: Solicita la página de aplicación de una sola página (SPA)
+    activate Server
+    Server-->>WebBrowser: Retorna la página de SPA
+    deactivate Server
+    WebBrowser->>User: Muestra la página de SPA
+    deactivate WebBrowser
+```
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant WebBrowser
+    participant Server
+    User->>WebBrowser: Ingresa a https://studies.cs.helsinki.fi/exampleapp/spa
+    activate WebBrowser
+    WebBrowser->>Server: Solicita la página de aplicación de una sola página (SPA)
+    activate Server
+    Server-->>WebBrowser: Retorna la página de SPA
+    deactivate Server
+    WebBrowser->>User: Muestra la página de SPA
+    deactivate WebBrowser
+```
+
